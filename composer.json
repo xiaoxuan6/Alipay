@@ -1,0 +1,27 @@
+{
+    "name": "james.xue/alipay",
+    "description": "alipay ...",
+    "type": "library",
+    "keywords": ["pay", "alipay"],
+    "homepage": "https://github.com/xiaoxuan6/alipay-demo.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "james.xue",
+            "email": "1527736751@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "James\\Alipay\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "James\\Alipay\\AlipayServiceProvider"
+            ]
+        }
+    }
+}
