@@ -3,7 +3,7 @@
     "description": "alipay ...",
     "type": "library",
     "keywords": ["pay", "alipay"],
-    "homepage": "https://github.com/xiaoxuan6/alipay-demo.git",
+    "homepage": "https://github.com/xiaoxuan6/alipay-demo",
     "license": "MIT",
     "authors": [
         {
