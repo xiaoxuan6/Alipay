@@ -36,7 +36,7 @@ class Alipay
         try {
             $config = config('alipay');
 
-            $order = $goods_data + ['product_code' => 'FAST_INSTANT_TRADE_PAY', 'qr_pay_mode' => 2];
+            $order = $goods_data + ['product_code' => 'FAST_INSTANT_TRADE_PAY', 'qr_pay_mode' => $config['qrcode']['type']];
 
             if($config['qrcode']['type'] == 4)
                 $order = $order + ['qrcode_width' => $config['qrcode']['qrcode_width']];
@@ -51,6 +51,7 @@ class Alipay
 
             return $re;
         }catch (\Exception $e){
+            self::writeLog('统一收单并支付页面接口錯誤', $e->getMessage());
             return false;
         }
     }
@@ -188,7 +189,7 @@ class Alipay
      */
     protected static function writeLog($method, $result){
 
-        $data = '['.date(Y-m-d).'] '.$method.' => '.json_encode($result, JSON_UNESCAPED_UNICODE);
+        $data = '['.date("Y-m-d").'] '.$method.' => '.json_encode($result, JSON_UNESCAPED_UNICODE);
 
         file_put_contents(storage_path('alipay.log'), $data, FILE_APPEND);
     }
