@@ -9,6 +9,7 @@
 使用：
 
 1、生成订单并跳转支付
+[文档](https://docs.open.alipay.com/api_1/alipay.trade.page.pay)
 
     $goods_data = [
         'out_trade_no' => $out_trade_no, // 订单号
@@ -26,6 +27,7 @@
     $result = $alipay->check($arr);
 
 3、，退款
+[文档](https://docs.open.alipay.com/api_1/alipay.trade.refund)
      
      * @param out_trade_no 订单号
      * @param refund_amount 金额
@@ -34,6 +36,7 @@
     $re = $alipay->refund($order);
     
 4、退款查询
+[文档](https://docs.open.alipay.com/api_1/alipay.trade.fastpay.refund.query)
      
      * @param out_trade_no  订单支付时传入的商户订单号
      * @param out_request_no 请求退款接口时，传入的退款请求号
@@ -41,6 +44,7 @@
     $re = $alipay->refundQuery($order);
     
 5、统一收单线下交易预创建（生成自定义二维码）
+[文档](https://docs.open.alipay.com/api_1/alipay.trade.precreate)
      
      * @param out_trade_no 订单号
      * @param total_amount 订单总金额
@@ -49,6 +53,7 @@
     $re = $alipay->precreate($order);
     
 6、统一收单线下交易查询
+[文档](https://docs.open.alipay.com/api_1/alipay.trade.query)
 
      * @param out_trade_no 订单号
     $alipay = new Alipay();

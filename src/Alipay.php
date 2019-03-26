@@ -55,7 +55,7 @@ class Alipay
 
             return $re;
         }catch (\Exception $e){
-            self::writeLog('统一收单并支付页面接口錯誤', $e->getMessage());
+            self::writeLog('统一收单并支付页面接口错误', $e->getMessage());
             return false;
         }
     }
