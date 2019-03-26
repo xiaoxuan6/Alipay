@@ -11,11 +11,15 @@ class Alipay
 {
     protected $alipay;
 
+    protected $gatewayUrl = "https://openapi.alipay.com/gateway.do";
+
+    protected $gatewayDevUrl = "https://openapi.alipaydev.com/gateway.do";
+
     public function __construct()
     {
         $config = config('alipay');
         $aop = new \AopClient();
-        $aop->gatewayUrl = $config['pattern'] == 'formal' ? $config['gatewayUrl'] : $config['gatewayDevUrl'];
+        $aop->gatewayUrl = $config['pattern'] == 'formal' ? $this->gatewayUrl : $this->gatewayUrl;
         $aop->appId = $config['app_id'];
         $aop->rsaPrivateKey = $config['merchant_private_key'];
         $aop->alipayrsaPublicKey= $config['alipay_public_key'];
