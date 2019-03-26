@@ -8,8 +8,7 @@
 
 使用：
 
-1、生成订单并跳转支付
-[文档](https://docs.open.alipay.com/api_1/alipay.trade.page.pay)
+1、生成订单并跳转支付 [文档](https://docs.open.alipay.com/api_1/alipay.trade.page.pay)
 
     $goods_data = [
         'out_trade_no' => $out_trade_no, // 订单号
@@ -26,8 +25,7 @@
     $alipay = new Alipay();
     $result = $alipay->check($arr);
 
-3、，退款
-[文档](https://docs.open.alipay.com/api_1/alipay.trade.refund)
+3、，退款 [文档](https://docs.open.alipay.com/api_1/alipay.trade.refund)
      
      * @param out_trade_no 订单号
      * @param refund_amount 金额
